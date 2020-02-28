@@ -31,20 +31,23 @@ class RingBuffer:
             if self.current < self.capacity:
                 print("WHEEEEE!!!")
             else:
-                self.current == 0
-                print("reset...?")
+                self.current = 0
             print("CAPACITY:", self.capacity, "; CURRENT:", self.current)    
-            if self.current == 0:
-                self.storage.head.value == item.value
-            else:
+            # if self.current == 0:
+            #     #
+            #     self.storage.head.value == item
+            #     print("from head overwrite...")
+            # else:
                 #won't work: can't subscript a doubly linked list
                 #self.storage[self.current] == item.value
-                count = 0
-                current = self.storage.head
-                while current != None:
-                    if count == self.current:
-                        self.current.value == item.value
-                    current = current.next
+            count = 0
+            current = self.storage.head
+            while current != None:
+                if count == self.current:
+                    #this is being triggered. Now, let's overwrite the value...
+                    print("YOUR MUM!!!!")
+                    self.current.value = item
+                current = current.next
 
 
 
