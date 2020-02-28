@@ -45,8 +45,10 @@ class RingBuffer:
             while current != None:
                 if count == self.current:
                     #this is being triggered. Now, let's overwrite the value...
-                    print("YOUR MUM!!!!")
-                    self.current.value = item
+                    print("Reaching the if statement")
+                    print("self.current", current.value, "item", item)
+                    current.value = item
+                    return
                 current = current.next
 
 
