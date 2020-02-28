@@ -28,8 +28,12 @@ class RingBuffer:
         else:
             #increment self.current by one
             self.current += 1
-            if self.current == self.capacity:
+            if self.current < self.capacity:
+                print("WHEEEEE!!!")
+            else:
                 self.current == 0
+                print("reset...?")
+            print("CAPACITY:", self.capacity, "; CURRENT:", self.current)    
             if self.current == 0:
                 self.storage.head.value == item.value
             else:
