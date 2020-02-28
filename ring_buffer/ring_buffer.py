@@ -33,13 +33,6 @@ class RingBuffer:
             else:
                 self.current = 0
             print("CAPACITY:", self.capacity, "; CURRENT:", self.current)    
-            # if self.current == 0:
-            #     #
-            #     self.storage.head.value == item
-            #     print("from head overwrite...")
-            # else:
-                #won't work: can't subscript a doubly linked list
-                #self.storage[self.current] == item.value
             count = 0
             current = self.storage.head
             while current != None:
@@ -48,7 +41,7 @@ class RingBuffer:
                     print("Reaching the if statement")
                     print("self.current", current.value, "item", item)
                     current.value = item
-                    return
+                    break
                 current = current.next
 
 
