@@ -31,18 +31,18 @@ class RingBuffer:
             if self.current < self.capacity:
                 print("WHEEEEE!!!")
             else:
-                self.current = 0
-            print("CAPACITY:", self.capacity, "; CURRENT:", self.current)    
+                #reset to 0 if at capacity
+                self.current = 0   
             count = 0
             current = self.storage.head
+            #increment through, looking for current spot in queue
             while current != None:
+                #Overwrite values here
                 if count == self.current:
-                    #this is being triggered. Now, let's overwrite the value...
-                    print("Reaching the if statement")
-                    print("self.current", current.value, "item", item)
                     current.value = item
-                    break
+                    return
                 current = current.next
+                count += 1
 
 
 
